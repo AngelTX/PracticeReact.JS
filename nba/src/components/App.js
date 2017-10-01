@@ -9,7 +9,13 @@ import Home from './home';
 class App extends Component {
   render() {
     return (
-      <div>Hello world</div>
+      <BrowserRouter>
+        <div>
+          <Header/>
+          <Route exact path="/" component={Home}/>
+          <Footer/>
+        </div>
+      </BrowserRouter>
     );
   }
 }
