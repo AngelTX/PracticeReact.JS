@@ -23,7 +23,7 @@ class Subscriptions extends Component {
 
 
     saveSubscription = (email) => {
-        const URL_EMAIL = 'http://localhost:3005/subcriptions'
+        const URL_EMAIL = 'http://localhost:3004/subcriptions'
 
         fetch(URL_EMAIL, {
         method: 'post',
