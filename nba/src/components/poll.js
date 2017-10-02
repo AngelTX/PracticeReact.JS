@@ -27,13 +27,29 @@ class Poll extends Component{
     this.fetchPoll()
   }
 
+
+  addCount(count,id){
+    fetch(`${URL_HOME}/${id}`,{
+      method:'PATCH',
+      headers:{
+        'accept':'application/json',
+        'Content-type':'application/json'
+      },
+      body:JSON.stringify({count:count + 1})
+    })
+    .then(()=>{
+      this.fetchPoll()
+    })
+  }
+
+
   renderPoll(){
     const position = ['1ST', '2ND', '3RD']
     return this.state.pollTeams.map((item, index)=>{
       return(
-        <div key={item.id} className="poll_item">
+        <div key={item.id} className="poll_item" onClick={()=>this.addCount(item.count, item.id)}>
           <img alt={item.name} src={`/images/teams/${item.logo}`}/>
-        <h4>{position[index]}</h4>
+          <h4>{position[index]}</h4>
           <div>{item.count} Votes</div>
         </div>
       )
