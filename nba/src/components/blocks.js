@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Reveal from 'react-reveal'; // REACT REVEAL
-import 'animate.css/animate.css'; //  REACT REVEAL
+import Reveal from 'react-reveal';
+import 'animate.css/animate.css';
 
 const generateBlocks = ({blocks}) => {
 
